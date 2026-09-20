@@ -1,0 +1,712 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f5f7f6;
+    color: #26332e;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    width: 100%;
+    height: 78px;
+    padding: 0 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #183c30;
+    letter-spacing: -0.5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #44524c;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Garis animasi menu */
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: #2f795d;
+
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #2f795d;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   HERO / HOME
+========================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 35, 27, 0.92) 0%,
+            rgba(16, 54, 41, 0.78) 45%,
+            rgba(16, 54, 41, 0.25) 100%
+        ),
+        url("images/Komplek.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+.hero-text {
+    max-width: 700px;
+    color: white;
+}
+
+.tagline {
+    display: inline-block;
+
+    color: #9de1c2;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.12;
+
+    margin-bottom: 22px;
+
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.hero-text > p:not(.tagline) {
+    max-width: 580px;
+
+    color: #e2ece8;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    margin-bottom: 32px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background-color: #3c9270;
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    border-radius: 7px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #2c7358;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================
+   DAFTAR RUMAH
+========================= */
+
+.rumah {
+    padding: 100px 8%;
+
+    text-align: center;
+
+    background-color: #f6f8f7;
+}
+
+.rumah h2,
+.fasilitas h2,
+.tentang h2 {
+    font-size: 36px;
+
+    color: #183c30;
+
+    margin-bottom: 8px;
+
+    font-weight: 800;
+}
+
+.subjudul {
+    color: #77817d;
+
+    font-size: 15px;
+
+    margin-bottom: 48px;
+}
+
+
+/* CONTAINER CARD */
+
+.rumah-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 28px;
+
+    flex-wrap: wrap;
+}
+
+
+/* CARD RUMAH */
+
+.card {
+    width: 350px;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    border: 1px solid #e9eeeb;
+
+    box-shadow: 0 8px 30px rgba(30, 60, 48, 0.08);
+
+    transition: 0.35s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 18px 40px rgba(30, 60, 48, 0.16);
+}
+
+
+/* GAMBAR */
+
+.gambar-rumah {
+    width: 100%;
+    height: 230px;
+
+    overflow: hidden;
+
+    background-color: #ddd;
+}
+
+.gambar-rumah img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.card:hover .gambar-rumah img {
+    transform: scale(1.06);
+}
+
+
+/* ISI CARD */
+
+.card-content {
+    padding: 24px;
+}
+
+.status {
+    display: inline-block;
+
+    background-color: #e5f5ed;
+    color: #277253;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    margin-bottom: 13px;
+}
+
+.card h3 {
+    color: #1b3e32;
+
+    font-size: 19px;
+
+    margin-bottom: 13px;
+}
+
+.card p {
+    color: #7a827f;
+
+    margin: 6px 0;
+
+    font-size: 13px;
+}
+
+.card h4 {
+    color: #2e8060;
+
+    margin: 19px 0;
+
+    font-size: 19px;
+}
+
+.card a {
+    display: block;
+
+    text-align: center;
+
+    padding: 12px;
+
+    background-color: #183c30;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.card a:hover {
+    background-color: #32775d;
+}
+
+
+/* =========================
+   TENTANG
+========================= */
+
+.tentang {
+    padding: 110px 8%;
+
+    background-color: white;
+}
+
+.tentang-box {
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 45px;
+
+    border-radius: 18px;
+
+    background-color: #f8faf9;
+
+    border: 1px solid #e9efec;
+}
+
+.tentang-box .tagline {
+    color: #398464;
+}
+
+.tentang-box p {
+    max-width: 700px;
+
+    margin: 15px auto 0;
+
+    line-height: 1.9;
+
+    color: #68736e;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   FASILITAS
+========================= */
+
+.fasilitas {
+    padding: 100px 8%;
+
+    text-align: center;
+
+    background-color: #edf4f0;
+}
+
+.fasilitas-container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 22px;
+}
+
+.fasilitas-card {
+    width: 250px;
+
+    padding: 35px 25px;
+
+    background-color: white;
+
+    border-radius: 14px;
+
+    border: 1px solid #e4ebe7;
+
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.05);
+
+    transition: 0.3s;
+}
+
+.fasilitas-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 15px 30px rgba(30, 60, 48, 0.12);
+}
+
+.icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #e8f4ee;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+}
+
+.fasilitas-card h3 {
+    color: #1c4436;
+
+    margin-bottom: 10px;
+
+    font-size: 17px;
+}
+
+.fasilitas-card p {
+    color: #78827e;
+
+    line-height: 1.7;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   KONTAK
+========================= */
+
+.kontak {
+    padding: 100px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #183c30,
+            #275f4b
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+.kontak-box {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.kontak h2 {
+    font-size: 36px;
+
+    margin-bottom: 15px;
+}
+
+.kontak-box > p {
+    color: #d6e5df;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+.info-kontak {
+    margin-top: 35px;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.info-kontak p {
+    padding: 11px 17px;
+
+    background-color: rgba(255, 255, 255, 0.1);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 8px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #102a21;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+footer h3 {
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+footer p {
+    color: #9db2aa;
+
+    font-size: 13px;
+}
+
+.copyright {
+    margin-top: 18px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   RESPONSIVE TABLET / HP
+========================= */
+
+@media (max-width: 850px) {
+
+    nav {
+        height: auto;
+
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 570px;
+
+        padding: 70px 7%;
+
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-text > p:not(.tagline) {
+        font-size: 15px;
+    }
+
+    .rumah,
+    .fasilitas,
+    .tentang,
+    .kontak {
+        padding: 70px 6%;
+    }
+
+    .rumah h2,
+    .fasilitas h2,
+    .tentang h2,
+    .kontak h2 {
+        font-size: 29px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .fasilitas-card {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .tentang-box {
+        padding: 30px 20px;
+    }
+
+    .info-kontak {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 500px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero h1 {
+        font-size: 33px;
+    }
+
+    .hero-text > p:not(.tagline) {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 12px 24px;
+    }
+
+    .gambar-rumah {
+        height: 210px;
+    }
+}
